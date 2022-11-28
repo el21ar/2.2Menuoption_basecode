@@ -34,6 +34,17 @@ int main() {
   std::string LED_colour;
   float CBev, VBev, Energygap, wlinhundreds;
   //initialise variables needed for first part of function
-  
+
+   std::cout << "\nPlease enter the energy level of the Conduction band in the semiconductor in eV:\n ";
+  std::cin >> CBev;
+
+  std::cout << "\nPlease enter the energy level of the Valence band in the semiconductor in eV:\n ";
+  std::cin >> VBev;
+  // collect values from the user for CBev and VBev, note these values need to be converted in or before calculation
+
+  Energygap = CBev * e - VBev * e; // get the bandgap energy level whilst converting the product from electronvolts to joules.
+  wavelength = h * c / Energygap; // get the wavelength of the photons emitted
+
+  std::cout << wavelength << std::endl;  //Line used to output value calculated to check output
   
 }
