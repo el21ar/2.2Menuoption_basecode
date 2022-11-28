@@ -83,5 +83,33 @@ int main() {
                    "the valence band energy value\n ";
     }
   }
+
+  wlinhundreds = wavelength * 1e9; //Convert wavelength calculated from nm to be compared to numbers in the map
+  for (i = col_map.begin(); i != col_map.end(); i++) {  // Loop next processes for each value of col_map
+
+    if (wlinhundreds >= i->second) {  //Compare wlinhundreds to col_map int, if calculated value is greater than the value stored in the value part of map then:
+      LED_colour = i->first;  // set the str variable to the current Key of the map
+      break;  //break the for loop so that no more comparing happens and colour isn't changed
+    }
+  }
+
+  if (wlinhundreds < 380) {    // If the calculated valuue is below the range in the col_map 
+    std::cout << "The wavelength produced is beyond the visible light spectrum "
+                 "into the ultra violet spectrum.";  // Give statement saying what is wrong
+    LED_colour = "   Ultra Violet";  // Set colour to the next part in EM spectrum
+    //  go_back_to_main();
+    //Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
+  } 
+  else if (wlinhundreds > 740) {  // Opposite to previous if statement where if the wavelength is greater than the range, note this will still be included in the Red section so colour must be changed to account for this as otherwise it could carry on with incorrect values
+    std::cout << "The wavelength produced is beyond the visible light spectrum "
+                 "into the infra red spectrum.";  // Statement about why proprerties provided are inappropriate for an LED
+    LED_colour = "   Infra Red";  // Set colour to real aspect of the EM spectrum
+    //  go_back_to_main();
+    //Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
+
+  }
+   LED_colour.erase(0, 3);    //Remove the first 3 characters of the srting stored in colour, this removes the number, dot and space or threee spaces in other cases This is useful as the string can be outputted in a sentence or something similar
+  std::cout << LED_colour << std::endl;  //output LED_colour to see what value it is
+
 }
 
