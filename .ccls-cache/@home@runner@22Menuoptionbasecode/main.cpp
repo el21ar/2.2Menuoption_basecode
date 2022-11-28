@@ -8,6 +8,7 @@ const float h = 6.626e-34;
 const int c = 3e8;
 const float e = 1.6e-19;  // Initialise constants used in calculations
 
+
 int main() {
   
   std::map<std::string, int> col_map;
@@ -34,17 +35,42 @@ int main() {
   std::string LED_colour;
   float CBev, VBev, Energygap, wlinhundreds;
   //initialise variables needed for first part of function
+  bool valid_input_bandgap = false;
+  int wrongloop;
 
-   std::cout << "\nPlease enter the energy level of the Conduction band in the semiconductor in eV:\n ";
-  std::cin >> CBev;
-
-  std::cout << "\nPlease enter the energy level of the Valence band in the semiconductor in eV:\n ";
-  std::cin >> VBev;
-  // collect values from the user for CBev and VBev, note these values need to be converted in or before calculation
-
-  Energygap = CBev * e - VBev * e; // get the bandgap energy level whilst converting the product from electronvolts to joules.
-  wavelength = h * c / Energygap; // get the wavelength of the photons emitted
-
-  std::cout << wavelength << std::endl;  //Line used to output value calculated to check output
+  while(valid_input_bandgap == false){
+    wrongloop ++;
+    if (wrongloop >=5){
+      std::cout << "Due to a number of invalid inputs this program has to revert back to the main menu";
+      		exit(0);
+     // go_to_menu
+    }
+    std::cout << "\nPlease enter the energy level value of the Conduction band in the semiconductor in eV:\n ";
+    std::cin >> CBev;
   
+    std::cout << "\nPlease enter the energy level value of the Valence band in the semiconductor in eV:\n ";
+    std::cin >> VBev;
+    // collect values from the user for CBev and VBev, note these values need to be converted in or before calculation
+
+    if (CBev == 0){
+      std::cout << "\nPlease enter valid input values, where the conduction band energy value must be a non 0 number\n ";
+    }
+     else if (VBev == 0){
+      std::cout << "\nPlease enter valid input values, where the valence band energy value must be a non 0 number\n ";
+    }
+    else if (CBev > VBev){
+  
+      Energygap = CBev * e - VBev * e; // get the bandgap energy level whilst converting the product from electronvolts to joules.
+      wavelength = h * c / Energygap; // get the wavelength of the photons emitted
+  
+      std::cout << wavelength << std::endl;  //Line used to output value calculated to check output
+      valid_input_bandgap = true;
+      }
+   
+    else if (CBev < VBev){
+      std::cout << "\nPlease enter valid input values, where the conduction band energy value must be a larger numerical value than the valence band energy value\n ";
+    }
+    
+    
+    } 
 }
