@@ -35,81 +35,85 @@ int main() {
 
   float wavelength = 0;
   std::string LED_colour;
-  float CBev, VBev, Energygap, wlinhundreds;
   // initialise variables needed for first part of function
   bool valid_input_bandgap = false;
   int wrongloop;
-
+  float CBev, VBev, Energygap, wlinhundreds;
   while (valid_input_bandgap == false) {
     wrongloop++;
     if (wrongloop >= 5) {
-      std::cout << "Due to a number of invalid inputs this program has to "
-                   "revert back to the main menu";
+      std::cout << "Due to a number of invalid inputs this program has to revert back to the main menu";
       exit(0);
       // go_to_menu
     }
-    std::cout << "\nPlease enter the energy level value of the Conduction band "
-                 "in the semiconductor in eV:\n ";
+    std::cout << "\nPlease enter the energy level value of the Conduction band in the semiconductor in eV:\n ";
     std::cin >> CBev;
 
-    std::cout << "\nPlease enter the energy level value of the Valence band in "
-                 "the semiconductor in eV:\n ";
+    std::cout << "\nPlease enter the energy level value of the Valence band in the semiconductor in eV:\n ";
     std::cin >> VBev;
-    // collect values from the user for CBev and VBev, note these values need to
-    // be converted in or before calculation
+    // collect values from the user for CBev and VBev, note these values need to be converted in or before calculation
 
     if (CBev == 0) {
-      std::cout << "\nPlease enter valid input values, where the conduction "
-                   "band energy value must be a non 0 number\n ";
+      std::cout << "\nPlease enter valid input values, where the conduction band energy value must be a non 0 number\n ";
     }
 
     else if (CBev > VBev) {
 
       Energygap =
-          CBev * e - VBev * e; // get the bandgap energy level whilst converting
-                               // the product from electronvolts to joules.
+          CBev * e - VBev * e; // get the bandgap energy level whilst converting the product from electronvolts to joules.
       wavelength =
           h * c / Energygap; // get the wavelength of the photons emitted
 
-      std::cout
-          << wavelength
-          << std::endl; // Line used to output value calculated to check output
+      std::cout << wavelength << std::endl; // Line used to output value calculated to check output
       valid_input_bandgap = true;
     }
 
     else if (CBev < VBev) {
-      std::cout << "\nPlease enter valid input values, where the conduction "
-                   "band energy value must be a larger numerical value than "
-                   "the valence band energy value\n ";
+      std::cout << "\nPlease enter valid input values, where the conduction band energy value must be a larger numerical value than the valence band energy value\n ";
     }
   }
 
-  wlinhundreds = wavelength * 1e9; //Convert wavelength calculated from nm to be compared to numbers in the map
-  for (i = col_map.begin(); i != col_map.end(); i++) {  // Loop next processes for each value of col_map
+  wlinhundreds = wavelength * 1e9; // Convert wavelength calculated from nm to be compared to numbers in the map
+  for (i = col_map.begin(); i != col_map.end(); i++) { // Loop next processes for each value of col_map
 
-    if (wlinhundreds >= i->second) {  //Compare wlinhundreds to col_map int, if calculated value is greater than the value stored in the value part of map then:
-      LED_colour = i->first;  // set the str variable to the current Key of the map
-      break;  //break the for loop so that no more comparing happens and colour isn't changed
+    if (wlinhundreds >= i->second) { // Compare wlinhundreds to col_map int, if calculated value is greater than the value stored in the value part of map then:
+      LED_colour = i->first; // set the str variable to the current Key of the map
+      break; // break the for loop so that no more comparing happens and colour isn't changed
     }
   }
 
-  if (wlinhundreds < 380) {    // If the calculated valuue is below the range in the col_map 
-    std::cout << "The wavelength produced is beyond the visible light spectrum "
-                 "into the ultra violet spectrum.";  // Give statement saying what is wrong
-    LED_colour = "   Ultra Violet";  // Set colour to the next part in EM spectrum
+  if (wlinhundreds < 380) { // If the calculated valuue is below the range in the col_map
+    std::cout << "The wavelength produced is beyond the visible light spectrum into the ultra violet spectrum."; // Give statement saying what is wrong
+    LED_colour ="  Ultra Violet"; // Set colour to the next part in EM spectrum
     //  go_back_to_main();
-    //Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
+    // Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
   } 
-  else if (wlinhundreds > 740) {  // Opposite to previous if statement where if the wavelength is greater than the range, note this will still be included in the Red section so colour must be changed to account for this as otherwise it could carry on with incorrect values
-    std::cout << "The wavelength produced is beyond the visible light spectrum "
-                 "into the infra red spectrum.";  // Statement about why proprerties provided are inappropriate for an LED
-    LED_colour = "   Infra Red";  // Set colour to real aspect of the EM spectrum
+  else if (wlinhundreds > 740) { // Opposite to previous if statement where if the wavelength is greater than the range, note this will still be included in the Red section so colour must be changed to account for this as otherwise it could carry on withincorrect values
+    std::cout << "The wavelength produced is beyond the visible light spectrum into the infra red spectrum."; // Statement about why proprerties provided are inappropriate for an LED
+    LED_colour = "   Infra Red"; // Set colour to real aspect of the EM spectrum
     //  go_back_to_main();
-    //Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
-
+    // Launches subroutine of returning to the main menu, liable to change to do another LED or return to menu
   }
-   LED_colour.erase(0, 3);    //Remove the first 3 characters of the srting stored in colour, this removes the number, dot and space or threee spaces in other cases This is useful as the string can be outputted in a sentence or something similar
-  std::cout << LED_colour << std::endl;  //output LED_colour to see what value it is
+  LED_colour.erase(0, 3); // Remove the first 3 characters of the srting stored in colour,this removes the number, dot and space or threee spaces in other cases This is useful as the string can be outputted in a sentence or something similar
+  std::cout << LED_colour << std::endl; // output LED_colour to see what value it is
 
+
+  float ForV;  //initialise forward voltage for each colour, statements needed to be changed when the erase command was added 
+  if (LED_colour == "Red") {
+    ForV = 1.8;
+  } else if (LED_colour == "Orange") {
+    ForV = 2;
+  } else if (LED_colour == "Yellow") {
+    ForV = 2.3;
+  } else if (LED_colour == "Green") {
+    ForV = 3.5;
+  } else if (LED_colour == "Cyan") {
+    ForV = 3.6;
+  } else if (LED_colour == "Blue") {
+    ForV = 3.8;
+  } else if (LED_colour == "Violet") {
+    ForV = 4;
+  } else {
+    ForV = 0;  //set ForV to 0 for UV or IR values inputted just in case they got passed the return commands
+  }
 }
-
