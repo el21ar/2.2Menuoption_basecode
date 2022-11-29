@@ -174,6 +174,10 @@ int main() {
       std::cin >> choice; // set input to choice
       t = 0; // reset t to 0 as otherwise it would build up over the loops
       if (choice == "y") { // if want to carry on
+        valid_input_res = true;
+        bool valid_input_V = false;
+
+         while(valid_input_V == false){
 
         std::cout
             << "Please enter the supply voltage, a valid voltage must be over "
@@ -184,8 +188,9 @@ int main() {
           std::cout << "The voltage supplied is not sufficient enough to power "
                        "the LED.\n";
           // As boolean statement hasn't changed it loops back around
-        } else {
-
+        } 
+        else {
+          valid_input_V = true;
           IdealRes = (Vsupply - ForV) / LED_forCurrent;
           std::cout << "The ideal resistance is: " << IdealRes << "Ω \n";
           // Calc and output the ideal resistance
@@ -217,6 +222,7 @@ int main() {
           std::cout << "The E24 resistance is: " << e24final << "Ω \n";
         }
       }
+        }
 
       else if (choice == "n") {
         valid_input_res = true;
