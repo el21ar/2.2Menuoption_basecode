@@ -29,9 +29,9 @@ int main() {
   float LED_forCurrent = 0.025;
 
   // Set array for each value of E24 resistor series
-  double res_array[24] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0,
+  double res_array[25] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0,
                           2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3,
-                          4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1};
+                          4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1, 10};
 
   float wavelength = 0;
   std::string LED_colour;
@@ -115,5 +115,55 @@ int main() {
     ForV = 4;
   } else {
     ForV = 0;  //set ForV to 0 for UV or IR values inputted just in case they got passed the return commands
+  }
+  std::cout <<"Forward voltage: " << ForV << "\n";
+
+
+  float Vsupply, IdealRes, resmult, e24base, e24final;  //Initialise decimals used in calculations
+  int t = 0;
+  std::string choice;
+  
+  if (ForV == 0) {  // if the UV or IR values got this far return to menu
+    // go_back_to_main();
+    }
+  else{
+    std::cout << "Do you want to calculate the protective resistor for the diode? Enter 'y' for yes or 'n' for no.\n ";  //ask question on each loop, states correct inputs in '' marks
+
+    std::cin >> choice;  //set input to choice
+    t = 0;  //reset t to 0 as otherwise it would build up over the loops
+    if (choice == "y") {  //if want to carry on
+
+      std::cout << "Please enter the supply voltage, a valid voltage must be over " << ForV << "V \n";
+      std::cin >> Vsupply;  // Get input value for supply Voltage
+
+      if (Vsupply <= ForV) {  //If voltage supply is less than forward V
+            std::cout << "The voltage supplied is not sufficient enough to power "
+                         "the LED.\n";
+            //As boolean statement hasn't changed it loops back around
+          } 
+          else {
+            
+            IdealRes = (Vsupply - ForV) / LED_forCurrent;
+            std::cout << "The ideal resistance is: " << IdealRes << "Ω \n";
+            //Calc and output the ideal resistance 
+            resmult = IdealRes;
+            //store output in another variable to be manipulated 
+
+            while (resmult > 10) {
+              resmult = resmult / 10;
+              t++;
+              //Get the resistance into a form of x.x and increment a variable for each time it divides by 10
+            }
+
+            for (int j = 1; j < 25; j++) {  //Go through each value of the e24 array
+              if (resmult <= res_array[j]) {  // if the value pof resmult in form x.x is less than the current value of the array 
+                e24base = res_array[j];  // set the base of the final res value to the first appropriate value of the e24 series and break the while loop
+                break;
+              }
+            }
+
+            
+            }
+      }
   }
 }
