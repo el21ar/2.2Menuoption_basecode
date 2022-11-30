@@ -177,52 +177,66 @@ int main() {
         valid_input_res = true;
         bool valid_input_V = false;
 
-         while(valid_input_V == false){
+        while (valid_input_V == false) {
 
-        std::cout
-            << "Please enter the supply voltage, a valid voltage must be over "
-            << ForV << "V \n";
-        std::cin >> Vsupply; // Get input value for supply Voltage
+          std::cout << "Please enter the supply voltage, a valid voltage must "
+                       "be over "
+                    << ForV << "V \n";
+          std::cin >> Vsupply; // Get input value for supply Voltage
 
-        if (Vsupply <= ForV) { // If voltage supply is less than forward V
-          std::cout << "The voltage supplied is not sufficient enough to power "
-                       "the LED.\n";
-          // As boolean statement hasn't changed it loops back around
-        } 
-        else {
-          valid_input_V = true;
-          IdealRes = (Vsupply - ForV) / LED_forCurrent;
-          std::cout << "The ideal resistance is: " << IdealRes << "Ω \n";
-          // Calc and output the ideal resistance
-          resmult = IdealRes;
-          // store output in another variable to be manipulated
+          if (Vsupply <= ForV) { // If voltage supply is less than forward V
+            std::cout
+                << "The voltage supplied is not sufficient enough to power "
+                   "the LED.\n";
+            // As boolean statement hasn't changed it loops back around
+          } else {
+            valid_input_V = true;
+            IdealRes = (Vsupply - ForV) / LED_forCurrent;
+            std::cout << "The ideal resistance is: " << IdealRes << "Ω \n";
+            // Calc and output the ideal resistance
+            resmult = IdealRes;
+            // store output in another variable to be manipulated
 
-          while (resmult > 10) {
-            resmult = resmult / 10;
-            t++;
-            // Get the resistance into a form of x.x and increment a variable
-            // for each time it divides by 10
-          }
-
-          for (int j = 1; j < 25;
-               j++) { // Go through each value of the e24 array
-            if (resmult <=
-                res_array[j]) { // if the value pof resmult in form x.x is less
-                                // than the current value of the array
-              e24base = res_array[j]; // set the base of the final res value to
-                                      // the first appropriate value of the e24
-                                      // series and break the while loop
-              break;
+            while (resmult > 10) {
+              resmult = resmult / 10;
+              t++;
+              // Get the resistance into a form of x.x and increment a variable
+              // for each time it divides by 10
             }
-          }
 
-          e24final = e24base * pow(10,
-                                   t); // use base and incremented variable to
-                                       // get final e24 value
-          std::cout << "The E24 resistance is: " << e24final << "Ω \n";
+            for (int j = 1; j < 25;
+                 j++) { // Go through each value of the e24 array
+              if (resmult <=
+                  res_array[j]) { // if the value pof resmult in form x.x is
+                                  // less than the current value of the array
+                e24base = res_array[j]; // set the base of the final res value
+                                        // to the first appropriate value of the
+                                        // e24 series and break the while loop
+                break;
+              }
+            }
+
+            e24final = e24base * pow(10,
+                                     t); // use base and incremented variable to
+                                         // get final e24 value
+            std::cout << "The E24 resistance is: " << e24final << "Ω \n";
+
+            std::cout << "Do you want to do another calculation for a diode or "
+                         "return to the menu? Enter 'c' for calculation or "
+                         "anything else for menu.\n "; // Give option to go
+                                                       // again or back to menu
+            std::string choice2;
+            std::cin >> choice2;
+
+            if (choice2 == "c") {
+              // menu_item_()
+            } else {
+              //  go_back_to_main();
+            } // as option is one key or other don't need to worry about wrong
+              // input
+          }
         }
       }
-        }
 
       else if (choice == "n") {
         valid_input_res = true;
@@ -236,3 +250,8 @@ int main() {
     }
   }
 }
+
+// do question if want to calc again or not
+// do text file editing
+// implement in a basic menu template
+// get your arse in gear
