@@ -8,8 +8,12 @@ const float h = 6.626e-34;
 const int c = 3e8;
 const float e = 1.6e-19; // Initialise constants used in calculations
 
-int main() {
+void LED_bandgap_textfile();
+void LED_res_textfile();
 
+int main() {
+  LED_bandgap_textfile();
+  LED_res_textfile();
   std::map<std::string, int> col_map;
   // add some value/key pairs in a map
   // Each number value correspods to the minimum wavelength of its respective
@@ -255,3 +259,109 @@ int main() {
 // do text file editing
 // implement in a basic menu template
 // get your arse in gear
+
+void LED_bandgap_textfile() {
+
+  float BG, Wl, WlinHun;
+  std::string LED_col;
+
+  std::map<std::string, int> bg_map;
+  bg_map["1. Red"] = 625;    // 625 - 740 nm
+  bg_map["2. Orange"] = 590; // 590 - 625 nm
+  bg_map["3. Yellow"] = 565; // 565 - 590 nm
+  bg_map["4. Green"] = 520;  // 520 - 565 nm
+  bg_map["5. Cyan"] = 500;   // 500 - 520 nm
+  bg_map["6. Blue"] = 435;   // 435 - 500 nm
+  bg_map["7. Violet"] = 380; // 380 - 435 nm
+  std::map<std::string, int>::iterator i;
+
+  std::ofstream LED_bandgap_example;
+  LED_bandgap_example.open("LED_bandgap_examples.txt");
+
+  for (float BG = 1.5; BG <= 3.5; BG = BG + 0.1) {
+    Wl = h * c / (BG * e);
+    WlinHun = Wl * 1e9;
+
+    for (i = bg_map.begin(); i != bg_map.end();
+         i++) { // Loop next processes for each value of col_map
+
+      if (WlinHun >= i->second) { // Compare wlinhundreds to col_map int, if
+                                  // calculated value
+        // is greater than the value stored in the value part of
+        // map then:
+        LED_col =
+            i->first; // set the str variable to the current Key of the map
+        LED_col.erase(0, 3);
+        break; // break the for loop so that no more comparing happens and
+               // colour isn't changed
+      }
+    }
+    if (WlinHun >= 740) {
+      LED_col = "Infra Red";
+    } else if (WlinHun <= 380) {
+      LED_col = "Ultra Violet";
+    }
+    LED_bandgap_example << "Bandgap: " << BG << "ev\t Wavelength: " << WlinHun
+                        << "nm\t LED colour: " << LED_col << "\n"
+                        << std::endl;
+  }
+  LED_bandgap_example.close();
+}
+
+void LED_res_textfile() {
+  float Vsup, IdealR, Rmult, E24base, E24fin, Vfor;
+  int m = 0;
+  std::string col;
+
+  std::map<std::string, float> forv_map;
+  forv_map["1. Red"] = 1.8;    // 625 - 740 nm
+  forv_map["2. Orange"] = 2;   // 590 - 625 nm
+  forv_map["3. Yellow"] = 2.3; // 565 - 590 nm
+  forv_map["4. Green"] = 3.5;  // 520 - 565 nm
+  forv_map["5. Cyan"] = 3.6;   // 500 - 520 nm
+  forv_map["6. Blue"] = 3.8;   // 435 - 500 nm
+  forv_map["7. Violet"] = 4;   // 380 - 435 nm
+  std::map<std::string, float>::iterator w;
+
+  float LED_forCurrent = 0.025;
+
+  // Set array for each value of E24 resistor series
+  double res_array[25] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2,
+                          2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1,
+                          5.6, 6.2, 6.8, 7.5, 8.2, 9.1, 10};
+
+  std::ofstream LED_proc_resistor_example;
+  LED_proc_resistor_example.open("LED_proc_resistor_examples.txt");
+
+  for (w = forv_map.begin(); w != forv_map.end();
+       w++) { // Loop next processes for each value of col_map
+    col = w->first;
+    Vfor = w->second;
+    m = 0;
+
+    for (Vsup = 5; Vsup <= 25; Vsup = Vsup + 2.5) {
+      m = 0;
+      IdealR = (Vsup - Vfor) / LED_forCurrent;
+      Rmult = IdealR;
+      while (Rmult > 10) {
+        Rmult = Rmult / 10;
+        m++;
+      }
+      for (int j = 1; j < 25; j++) {
+        if (Rmult <= res_array[j]) {
+          E24base = res_array[j];
+          break;
+        }
+      }
+      E24fin = E24base * pow(10, m);
+      LED_proc_resistor_example << "LED Colour: " << col
+                                << ",\tSupply voltage: " << Vsup
+                                << "V,\t Forward op voltage: " << Vfor
+                                << "V,\t Ideal resistance:" << IdealR
+                                << "Ω,\t E24 resistance:" << E24fin << "Ω\n"
+                                << std::endl;
+    }
+    LED_proc_resistor_example << "\n\n" << std::endl;
+  }
+  LED_proc_resistor_example.close();
+}

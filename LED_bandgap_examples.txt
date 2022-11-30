@@ -1,0 +1,42 @@
+Bandgap: 1.5ev	 Wavelength: 828.25nm	 LED colour: Infra Red
+
+Bandgap: 1.6ev	 Wavelength: 776.484nm	 LED colour: Infra Red
+
+Bandgap: 1.7ev	 Wavelength: 730.809nm	 LED colour: Red
+
+Bandgap: 1.8ev	 Wavelength: 690.208nm	 LED colour: Red
+
+Bandgap: 1.9ev	 Wavelength: 653.881nm	 LED colour: Red
+
+Bandgap: 2ev	 Wavelength: 621.188nm	 LED colour: Orange
+
+Bandgap: 2.1ev	 Wavelength: 591.607nm	 LED colour: Orange
+
+Bandgap: 2.2ev	 Wavelength: 564.716nm	 LED colour: Green
+
+Bandgap: 2.3ev	 Wavelength: 540.163nm	 LED colour: Green
+
+Bandgap: 2.4ev	 Wavelength: 517.656nm	 LED colour: Cyan
+
+Bandgap: 2.5ev	 Wavelength: 496.95nm	 LED colour: Blue
+
+Bandgap: 2.6ev	 Wavelength: 477.837nm	 LED colour: Blue
+
+Bandgap: 2.7ev	 Wavelength: 460.139nm	 LED colour: Blue
+
+Bandgap: 2.8ev	 Wavelength: 443.705nm	 LED colour: Blue
+
+Bandgap: 2.9ev	 Wavelength: 428.405nm	 LED colour: Violet
+
+Bandgap: 3ev	 Wavelength: 414.125nm	 LED colour: Violet
+
+Bandgap: 3.1ev	 Wavelength: 400.766nm	 LED colour: Violet
+
+Bandgap: 3.2ev	 Wavelength: 388.242nm	 LED colour: Violet
+
+Bandgap: 3.3ev	 Wavelength: 376.477nm	 LED colour: Ultra Violet
+
+Bandgap: 3.4ev	 Wavelength: 365.405nm	 LED colour: Ultra Violet
+
+Bandgap: 3.5ev	 Wavelength: 354.964nm	 LED colour: Ultra Violet
+

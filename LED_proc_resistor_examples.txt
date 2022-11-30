@@ -1,0 +1,147 @@
+LED Colour: 1. Red	Supply voltage: 5V	 Forward op voltage: 1.8V	 Ideal resistance:128Ω	 E24 resistance:130Ω
+
+LED Colour: 1. Red	Supply voltage: 7.5V	 Forward op voltage: 1.8V	 Ideal resistance:228Ω	 E24 resistance:240Ω
+
+LED Colour: 1. Red	Supply voltage: 10V	 Forward op voltage: 1.8V	 Ideal resistance:328Ω	 E24 resistance:330Ω
+
+LED Colour: 1. Red	Supply voltage: 12.5V	 Forward op voltage: 1.8V	 Ideal resistance:428Ω	 E24 resistance:430Ω
+
+LED Colour: 1. Red	Supply voltage: 15V	 Forward op voltage: 1.8V	 Ideal resistance:528Ω	 E24 resistance:560Ω
+
+LED Colour: 1. Red	Supply voltage: 17.5V	 Forward op voltage: 1.8V	 Ideal resistance:628Ω	 E24 resistance:680Ω
+
+LED Colour: 1. Red	Supply voltage: 20V	 Forward op voltage: 1.8V	 Ideal resistance:728Ω	 E24 resistance:750Ω
+
+LED Colour: 1. Red	Supply voltage: 22.5V	 Forward op voltage: 1.8V	 Ideal resistance:828Ω	 E24 resistance:910Ω
+
+LED Colour: 1. Red	Supply voltage: 25V	 Forward op voltage: 1.8V	 Ideal resistance:928Ω	 E24 resistance:1000Ω
+
+
+
+
+LED Colour: 2. Orange	Supply voltage: 5V	 Forward op voltage: 2V	 Ideal resistance:120Ω	 E24 resistance:130Ω
+
+LED Colour: 2. Orange	Supply voltage: 7.5V	 Forward op voltage: 2V	 Ideal resistance:220Ω	 E24 resistance:240Ω
+
+LED Colour: 2. Orange	Supply voltage: 10V	 Forward op voltage: 2V	 Ideal resistance:320Ω	 E24 resistance:330Ω
+
+LED Colour: 2. Orange	Supply voltage: 12.5V	 Forward op voltage: 2V	 Ideal resistance:420Ω	 E24 resistance:430Ω
+
+LED Colour: 2. Orange	Supply voltage: 15V	 Forward op voltage: 2V	 Ideal resistance:520Ω	 E24 resistance:560Ω
+
+LED Colour: 2. Orange	Supply voltage: 17.5V	 Forward op voltage: 2V	 Ideal resistance:620Ω	 E24 resistance:620Ω
+
+LED Colour: 2. Orange	Supply voltage: 20V	 Forward op voltage: 2V	 Ideal resistance:720Ω	 E24 resistance:750Ω
+
+LED Colour: 2. Orange	Supply voltage: 22.5V	 Forward op voltage: 2V	 Ideal resistance:820Ω	 E24 resistance:820Ω
+
+LED Colour: 2. Orange	Supply voltage: 25V	 Forward op voltage: 2V	 Ideal resistance:920Ω	 E24 resistance:1000Ω
+
+
+
+
+LED Colour: 3. Yellow	Supply voltage: 5V	 Forward op voltage: 2.3V	 Ideal resistance:108Ω	 E24 resistance:110Ω
+
+LED Colour: 3. Yellow	Supply voltage: 7.5V	 Forward op voltage: 2.3V	 Ideal resistance:208Ω	 E24 resistance:220Ω
+
+LED Colour: 3. Yellow	Supply voltage: 10V	 Forward op voltage: 2.3V	 Ideal resistance:308Ω	 E24 resistance:330Ω
+
+LED Colour: 3. Yellow	Supply voltage: 12.5V	 Forward op voltage: 2.3V	 Ideal resistance:408Ω	 E24 resistance:430Ω
+
+LED Colour: 3. Yellow	Supply voltage: 15V	 Forward op voltage: 2.3V	 Ideal resistance:508Ω	 E24 resistance:510Ω
+
+LED Colour: 3. Yellow	Supply voltage: 17.5V	 Forward op voltage: 2.3V	 Ideal resistance:608Ω	 E24 resistance:620Ω
+
+LED Colour: 3. Yellow	Supply voltage: 20V	 Forward op voltage: 2.3V	 Ideal resistance:708Ω	 E24 resistance:750Ω
+
+LED Colour: 3. Yellow	Supply voltage: 22.5V	 Forward op voltage: 2.3V	 Ideal resistance:808Ω	 E24 resistance:820Ω
+
+LED Colour: 3. Yellow	Supply voltage: 25V	 Forward op voltage: 2.3V	 Ideal resistance:908Ω	 E24 resistance:910Ω
+
+
+
+
+LED Colour: 4. Green	Supply voltage: 5V	 Forward op voltage: 3.5V	 Ideal resistance:60Ω	 E24 resistance:62Ω
+
+LED Colour: 4. Green	Supply voltage: 7.5V	 Forward op voltage: 3.5V	 Ideal resistance:160Ω	 E24 resistance:180Ω
+
+LED Colour: 4. Green	Supply voltage: 10V	 Forward op voltage: 3.5V	 Ideal resistance:260Ω	 E24 resistance:270Ω
+
+LED Colour: 4. Green	Supply voltage: 12.5V	 Forward op voltage: 3.5V	 Ideal resistance:360Ω	 E24 resistance:360Ω
+
+LED Colour: 4. Green	Supply voltage: 15V	 Forward op voltage: 3.5V	 Ideal resistance:460Ω	 E24 resistance:470Ω
+
+LED Colour: 4. Green	Supply voltage: 17.5V	 Forward op voltage: 3.5V	 Ideal resistance:560Ω	 E24 resistance:560Ω
+
+LED Colour: 4. Green	Supply voltage: 20V	 Forward op voltage: 3.5V	 Ideal resistance:660Ω	 E24 resistance:680Ω
+
+LED Colour: 4. Green	Supply voltage: 22.5V	 Forward op voltage: 3.5V	 Ideal resistance:760Ω	 E24 resistance:820Ω
+
+LED Colour: 4. Green	Supply voltage: 25V	 Forward op voltage: 3.5V	 Ideal resistance:860Ω	 E24 resistance:910Ω
+
+
+
+
+LED Colour: 5. Cyan	Supply voltage: 5V	 Forward op voltage: 3.6V	 Ideal resistance:56Ω	 E24 resistance:62Ω
+
+LED Colour: 5. Cyan	Supply voltage: 7.5V	 Forward op voltage: 3.6V	 Ideal resistance:156Ω	 E24 resistance:160Ω
+
+LED Colour: 5. Cyan	Supply voltage: 10V	 Forward op voltage: 3.6V	 Ideal resistance:256Ω	 E24 resistance:270Ω
+
+LED Colour: 5. Cyan	Supply voltage: 12.5V	 Forward op voltage: 3.6V	 Ideal resistance:356Ω	 E24 resistance:360Ω
+
+LED Colour: 5. Cyan	Supply voltage: 15V	 Forward op voltage: 3.6V	 Ideal resistance:456Ω	 E24 resistance:470Ω
+
+LED Colour: 5. Cyan	Supply voltage: 17.5V	 Forward op voltage: 3.6V	 Ideal resistance:556Ω	 E24 resistance:560Ω
+
+LED Colour: 5. Cyan	Supply voltage: 20V	 Forward op voltage: 3.6V	 Ideal resistance:656Ω	 E24 resistance:680Ω
+
+LED Colour: 5. Cyan	Supply voltage: 22.5V	 Forward op voltage: 3.6V	 Ideal resistance:756Ω	 E24 resistance:820Ω
+
+LED Colour: 5. Cyan	Supply voltage: 25V	 Forward op voltage: 3.6V	 Ideal resistance:856Ω	 E24 resistance:910Ω
+
+
+
+
+LED Colour: 6. Blue	Supply voltage: 5V	 Forward op voltage: 3.8V	 Ideal resistance:48Ω	 E24 resistance:51Ω
+
+LED Colour: 6. Blue	Supply voltage: 7.5V	 Forward op voltage: 3.8V	 Ideal resistance:148Ω	 E24 resistance:150Ω
+
+LED Colour: 6. Blue	Supply voltage: 10V	 Forward op voltage: 3.8V	 Ideal resistance:248Ω	 E24 resistance:270Ω
+
+LED Colour: 6. Blue	Supply voltage: 12.5V	 Forward op voltage: 3.8V	 Ideal resistance:348Ω	 E24 resistance:360Ω
+
+LED Colour: 6. Blue	Supply voltage: 15V	 Forward op voltage: 3.8V	 Ideal resistance:448Ω	 E24 resistance:470Ω
+
+LED Colour: 6. Blue	Supply voltage: 17.5V	 Forward op voltage: 3.8V	 Ideal resistance:548Ω	 E24 resistance:560Ω
+
+LED Colour: 6. Blue	Supply voltage: 20V	 Forward op voltage: 3.8V	 Ideal resistance:648Ω	 E24 resistance:680Ω
+
+LED Colour: 6. Blue	Supply voltage: 22.5V	 Forward op voltage: 3.8V	 Ideal resistance:748Ω	 E24 resistance:750Ω
+
+LED Colour: 6. Blue	Supply voltage: 25V	 Forward op voltage: 3.8V	 Ideal resistance:848Ω	 E24 resistance:910Ω
+
+
+
+
+LED Colour: 7. Violet	Supply voltage: 5V	 Forward op voltage: 4V	 Ideal resistance:40Ω	 E24 resistance:43Ω
+
+LED Colour: 7. Violet	Supply voltage: 7.5V	 Forward op voltage: 4V	 Ideal resistance:140Ω	 E24 resistance:150Ω
+
+LED Colour: 7. Violet	Supply voltage: 10V	 Forward op voltage: 4V	 Ideal resistance:240Ω	 E24 resistance:270Ω
+
+LED Colour: 7. Violet	Supply voltage: 12.5V	 Forward op voltage: 4V	 Ideal resistance:340Ω	 E24 resistance:360Ω
+
+LED Colour: 7. Violet	Supply voltage: 15V	 Forward op voltage: 4V	 Ideal resistance:440Ω	 E24 resistance:470Ω
+
+LED Colour: 7. Violet	Supply voltage: 17.5V	 Forward op voltage: 4V	 Ideal resistance:540Ω	 E24 resistance:560Ω
+
+LED Colour: 7. Violet	Supply voltage: 20V	 Forward op voltage: 4V	 Ideal resistance:640Ω	 E24 resistance:680Ω
+
+LED Colour: 7. Violet	Supply voltage: 22.5V	 Forward op voltage: 4V	 Ideal resistance:740Ω	 E24 resistance:750Ω
+
+LED Colour: 7. Violet	Supply voltage: 25V	 Forward op voltage: 4V	 Ideal resistance:840Ω	 E24 resistance:910Ω
+
+
+
+
